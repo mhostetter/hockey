@@ -58,14 +58,14 @@ class RinkFigure():
         logo = plt.imread(logo_file)
 
         # Center team logo between the blue line and the offensive zone faceoff dot
-        center_x = BLUE_LINE_DX + (FACE_OFF_DOT_DX - BLUE_LINE_DX)/2
+        center_x = (BLUE_LINE_DX + FACE_OFF_DOT_DX)/2
         center_y = 0
         if side == 'home':
             center_x *= -1
 
-        # Maintain logo scale but fix the width
-        width = (BLUE_LINE_DX + FACE_OFF_DOT_DX)/5
-        height = width*logo.shape[0]/logo.shape[1]
+        # Maintain logo scale but fix height
+        height = (RINK_DY*2)/5
+        width = height*logo.shape[1]/logo.shape[0]
 
         # Plot logo on figure
         self.ax.imshow(logo, origin='upper', alpha=0.4, extent=(center_x-width/2, center_x+width/2, center_y-height/2, center_y+height/2))
