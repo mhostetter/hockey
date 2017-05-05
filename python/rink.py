@@ -107,5 +107,5 @@ class RinkFigure():
         # print 'onpick3 scatter:', ind, npy.take(x, ind), npy.take(y, ind)
 
 
-    def save(self, filename):
-        plt.savefig(filename, pad_inches=0.0)
+    def save(self, file):
+        plt.savefig(file, dpi=200)
