@@ -28,7 +28,7 @@ class RinkFigure():
         self.ax.axes.get_yaxis().set_visible(False)
 
         # Read rink image
-        rink_file = os.path.join(os.path.dirname(__file__), '../images/rink.png')
+        rink_file = os.path.join(os.path.dirname(__file__), './images/rink.png')
         rink = plt.imread(rink_file)
 
         # Plot rink on figure
@@ -51,7 +51,7 @@ class RinkFigure():
             :param team: A valid NHL tricode, e.g. 'WSH', 'PIT', etc. 
         """
         # Read logo image
-        logo_file = os.path.join(os.path.dirname(__file__), '../images/teams/{}.png'.format(team))
+        logo_file = os.path.join(os.path.dirname(__file__), './images/teams/{}.png'.format(team))
         if not os.path.exists(logo_file):
             raise ValueError('Invalid NHL team tricode')
             return
